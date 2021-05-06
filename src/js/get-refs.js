@@ -1,6 +1,6 @@
 export default function () {
     return {
-        input: document.querySelector('.input'),
-        output: document.querySelector('.result'),
+        input: document.querySelector('.js-input'),
+        output: document.querySelector('.js-result'),
       };
 }

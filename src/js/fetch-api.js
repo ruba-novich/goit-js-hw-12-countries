@@ -16,15 +16,20 @@ refs.input.addEventListener('input', debounce(onSearch, 800));
 
 function onSearch(e) {
   e.preventDefault();
+  console.log(e.target.value);
   
   if (!e.target.value) {
     onCleanerlist()
     return;
   }
-   
-  API.fetchCountries(e.target.value)
+   if (e.target.value !== '') {
+    API.fetchCountries(e.target.value)
     .then(renderСondition)
     .catch(onFetchError)
+   } else {
+    onSearchError
+   }
+  
   }
 
 function renderСondition (countries) {
